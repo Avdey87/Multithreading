@@ -31,23 +31,21 @@ public class MainActivity extends AppCompatActivity {
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bt.setEnabled(false);
+                /*bt.setEnabled(false);
                 progressBar.setVisibility(View.VISIBLE);
-                tv.setText(R.string.Loading);
-                
+                tv.setText(R.string.Loading);*/
+
                 Intent intent = new Intent(MainActivity.this, CountService.class);
                 startService(intent);
-                try {
-                    TimeUnit.MILLISECONDS.sleep(5000);
 
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-/*
-                bt.setEnabled(true);
-                tv.setText(R.string.Ready);
-                progressBar.setVisibility(View.GONE);
-                stopService(intent);*/
+                    bt.setEnabled(true);
+                    tv.setText(R.string.Ready);
+                    progressBar.setVisibility(View.GONE);
+                    stopService(intent);
+
+
+
+
             }
         });
 
